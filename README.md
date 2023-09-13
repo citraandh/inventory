@@ -25,7 +25,6 @@ Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta
     Pertama-tama client request di kirim ke urls.py yang diteruskan ke views.Views akan mengakses data models.py dan dikirm kembali ke view. Views akan meneruskan ke html untuk menampilkan hasilnya dan mengirim response ke client.
 
 Mengapa kita menggunakan virtual environment? Apakah tetap dapat membuat aplikasi web berbasis Django tanpanya?\
-    
     Virtual environment dibuat di atas instalasi python yang ada. Kegunaan virtual environment itu sendiri adalah untuk mengontrol packages python atau dependensi yang berbeda untuk berbagai projek. Jadi, apabila projek A membutuhkan package x, tidak akan memperngaruhi projek B yang memiliki requirement/dependensi yang berbeda. Dengan VE, kita juga dapat dengan mudah menghapus dependensi suatu proyek tanpa mempengaruhi OS. Selan itu, CE juga membuat kolaborasi lebih mudah.\
     Tanpa VE, kita tetap dapat membuat aplikasi berbasis Django. Namun, kemungkinan akan bermasalah lebih besar dan rumit. Hal itu karena VE ada untuk mempermudah software developing. Akan lebih baik apabila kita menggunakan virtual environment.
 
@@ -41,12 +40,12 @@ Apa itu MVC, MVT, MVVM dan perbedaannya?\
         3. Template, mengatur tampilan user dan memisahkan html dari logika aplikasi. Template digunakan untuk merancang tampilan yang nantinya diisi data dari model melalui view.\
     
     Model-View-ViewModel(MVVM)\
-        Pada MVVM, logika presentasi data (View) dipisahkan dengan logika bisnis utama dari aplikasi.\
-        1. Model, abstraksi dari sumber-sumber data. Model dan ViewModel bekerja sama untuk menyimpan datanya.\
-        2. View, untuk memnginformasikan ViewModel aksi user dan tidak mengandung logika aplikasi.\
-        3. ViewModel, sebagai hubungan antara Model dan View serta menampilakn data yang relevan ke View.\
+        Pada MVVM, logika presentasi data (View) dipisahkan dengan logika bisnis utama dari aplikasi.
+        1. Model, abstraksi dari sumber-sumber data. Model dan ViewModel bekerja sama untuk menyimpan datanya.
+        2. View, untuk memnginformasikan ViewModel aksi user dan tidak mengandung logika aplikasi.
+        3. ViewModel, sebagai hubungan antara Model dan View serta menampilakn data yang relevan ke View.
     
-    Perbedaan ketiganya:\
-    - MVC input di Controller dan controller berfungsi sebagai penghubung, MVT View dan Template  terhubung , dan MVVM ViewModel berperan kuat, dapat bekerja sendiri tanpa logika aplikasi dari View\
-    - Pada MVC sulit untuk membuat perubahan karena ketiga komponen sangat terikat. Pada MVT, perubahan mudah terjadi. Sedangkan pada MVVP, mudah untuk mengubah aplikasi namun apabila logika pengikat datanya terlalu kompleks, akan sulit untuk debug.\
+    Perbedaan ketiganya:
+    - MVC input di Controller dan controller berfungsi sebagai penghubung, MVT View dan Template  terhubung , dan MVVM ViewModel berperan kuat, dapat bekerja sendiri tanpa logika aplikasi dari View
+    - Pada MVC sulit untuk membuat perubahan karena ketiga komponen sangat terikat. Pada MVT, perubahan mudah terjadi. Sedangkan pada MVVP, mudah untuk mengubah aplikasi namun apabila logika pengikat datanya terlalu kompleks, akan sulit untuk debug.
     - MVC, cocok untuk projek skala kecil, MVT cocok untuk aplikasi simple dan kompleks, sementara MVVP tidak cocok untuk projek berskala kecil.
