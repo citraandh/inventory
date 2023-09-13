@@ -25,7 +25,7 @@ Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta
     Pertama-tama client request di kirim ke urls.py yang diteruskan ke views.Views akan mengakses data models.py dan dikirm kembali ke view. Views akan meneruskan ke html untuk menampilkan hasilnya dan mengirim response ke client.
 
 Mengapa kita menggunakan virtual environment? Apakah tetap dapat membuat aplikasi web berbasis Django tanpanya?\
-    Virtual environment dibuat di atas instalasi python yang ada. Kegunaan virtual environment itu sendiri adalah untuk mengontrol packages python atau dependensi yang berbeda untuk berbagai projek. Jadi, apabila projek A membutuhkan package x, tidak akan memperngaruhi projek B yang memiliki requirement/dependensi yang berbeda. Dengan VE, kita juga dapat dengan mudah menghapus dependensi suatu proyek tanpa mempengaruhi OS. Selan itu, CE juga membuat kolaborasi lebih mudah.\
+    Virtual environment dibuat di atas instalasi python yang ada. Kegunaan virtual environment itu sendiri adalah untuk mengontrol packages python atau dependensi yang berbeda untuk berbagai projek. Jadi, apabila projek A membutuhkan package x, tidak akan memperngaruhi projek B yang memiliki requirement/dependensi yang berbeda. Dengan VE, kita juga dapat dengan mudah menghapus dependensi suatu proyek tanpa mempengaruhi OS. Selain itu, VE juga membuat kolaborasi lebih mudah.\
     Tanpa VE, kita tetap dapat membuat aplikasi berbasis Django. Namun, kemungkinan akan bermasalah lebih besar dan rumit. Hal itu karena VE ada untuk mempermudah software developing. Akan lebih baik apabila kita menggunakan virtual environment.
 
 Apa itu MVC, MVT, MVVM dan perbedaannya?\
