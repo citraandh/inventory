@@ -4,12 +4,14 @@ NPM         : 2206830012
 
 Kelas       : PBP D
 
-Pertanyaan =================================================================
+Pertanyaan =================================================================\
 Apa perbedaan antara form POST dan form GET dalam Django?
 
-    Get digunakan untuk membaca atau mengambil data dari web server dan me return HTTP status code 200 jika data berhasil diambil.
+    Get digunakan untuk membaca atau mengambil data dari web server dan \
+    mereturn HTTP status code 200 jika data berhasil diambil.
     
-    Post digunakan untuk mengirim data ke server yang akan mereturn HTTP status code 201 jika berhasil mengirim.
+    Post digunakan untuk mengirim data ke server yang akan mereturn HTTP \
+    status code 201 jika berhasil mengirim.
 
 Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
     
