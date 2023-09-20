@@ -12,8 +12,8 @@ def show_main(request):
     products = Item.objects.all()
 
     context = {
-        'name': 'Citra Andini Hermawan', # Nama kamu
-        'class': 'PBP D', # Kelas PBP kamu
+        'name': 'Citra Andini Hermawan',
+        'class': 'PBP D',
         'products': products
     }
 
@@ -28,10 +28,6 @@ def create_product(request):
 
     context = {'form': form}
     return render(request, "create_product.html", context)
-
-def show_html(request):
-    data = Item.objects.all()
-    return HttpResponse(serializers.serialize("html", data), content_type="application/html")
 
 def show_xml(request):
     data = Item.objects.all()
