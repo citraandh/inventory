@@ -7,19 +7,29 @@ Kelas       : PBP D
 Pertanyaan =================================================================\
 Apa perbedaan antara form POST dan form GET dalam Django?
 
-    Get digunakan untuk membaca atau mengambil data dari web server dan 
-    mereturn HTTP status code 200 jika data berhasil diambil.
-    Method form GET, nilai dapat dilihat langsung dalam URL yang dikirimkan. form GET baiknya digunakan untuk menampilkan data atau mengambil data dari database saja. Tidak disarankan menggunakan form method ini untuk data sensitif.
+    Get digunakan untuk membaca atau mengambil data dari web server 
+    dan mereturn HTTP status code 200 jika data berhasil diambil.
+    Method form GET, nilai dapat dilihat langsung dalam URL yang 
+    dikirimkan. form GET baiknya digunakan untuk menampilkan data 
+    atau mengambil data dari database saja. Tidak disarankan 
+    menggunakan form method ini untuk data sensitif.
     
-    Post digunakan untuk mengirim data ke server yang akan mereturn HTTP
-    status code 201 jika berhasil mengirim.
-    Method form POST tidak akan menampilkan isi form untuk ditampilkan di URL. Oleh karena itu, method ini cocok untuk data sensitif yang membutuhkan keamanan tinggi. Method post digunakan untuk menambah data seperti upload file atau login.
+    Post digunakan untuk mengirim data ke server yang akan mereturn 
+    HTTP    status code 201 jika berhasil mengirim.
+    Method form POST tidak akan menampilkan isi form untuk ditampilkan
+    di URL. Oleh karena itu, method ini cocok untuk data sensitif 
+    yang membutuhkan keamanan tinggi. Method post digunakan untuk 
+    menambah data seperti upload file atau login.
 
 Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
     
     XML dan JSON digunakan untuk menyimpan dan mengirim data sedangkan 
     HTML digunakan untuk mendeskripsikan data atau bagaimana data 
-    tersebut ditampilkan. XML berbentuk tree dengan branchnya sedangkan JSON berupa key-value pair seperti dictionary. XML harus menggunakan parser XML sedangkan JSON bisa diparse dengan fungsi standar JavaScript. Karena struktur dan ukuran filenya, JSON lebih cepat dibandingkan XML.
+    tersebut ditampilkan. XML berbentuk tree dengan branchnya 
+    sedangkan JSON berupa key-value pair seperti dictionary. XML 
+    harus menggunakan parser XML sedangkan JSON bisa diparse 
+    dengan fungsi standar JavaScript. Karena struktur dan ukuran 
+    filenya, JSON lebih cepat dibandingkan XML.
 
 Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
     
@@ -55,27 +65,27 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 
 Screenshots Postman
 
-![json_id1]([url=https://postimg.cc/KRJd0TzT][img]https://i.postimg.cc/KRJd0TzT/Screenshot-693.png[/img][/url])
+![json_id1](https://i.postimg.cc/Hkgds416/Screenshot-693.png)
 
-![json_id1]([url=https://postimg.cc/6y9kVc9w][img]https://i.postimg.cc/6y9kVc9w/Screenshot-694.png[/img][/url])
+![json_id1](https://i.postimg.cc/5NvfVKTH/Screenshot-694.png)
 
-![json_id1]([url=https://postimg.cc/BjbRkvLV][img]https://i.postimg.cc/BjbRkvLV/Screenshot-695.png[/img][/url])
+![json_id1](https://i.postimg.cc/sg4yBQVs/Screenshot-695.png)
 
-![json_id1]([url=https://postimg.cc/K1WC2ytv][img]https://i.postimg.cc/K1WC2ytv/Screenshot-696.png[/img][/url])
+![json_id1](https://i.postimg.cc/FKFv0rRc/Screenshot-696.png)
 
-![json_id1]([url=https://postimg.cc/pyYNn4Mq][img]https://i.postimg.cc/pyYNn4Mq/Screenshot-697.png[/img][/url])
+![json_id1](https://i.postimg.cc/wxn9nYf8/Screenshot-697.png)
 
-![json_id1]([url=https://postimg.cc/MnhxYBPD][img]https://i.postimg.cc/MnhxYBPD/Screenshot-698.png[/img][/url])
+![json_id1](https://i.postimg.cc/R00F4Qwj/Screenshot-698.png)
 
-![json_id1]([url=https://postimg.cc/Yv4MgR30][img]https://i.postimg.cc/Yv4MgR30/Screenshot-699.png[/img][/url])
+![json_id1](https://i.postimg.cc/L8DXc0gt/Screenshot-699.png)
 
-![json_id1]([url=https://postimg.cc/jL3RLmyB][img]https://i.postimg.cc/jL3RLmyB/Screenshot-700.png[/img][/url])
+![json_id1](https://i.postimg.cc/VkmvHcvs/Screenshot-700.png)
 
-![json_id1]([url=https://postimg.cc/w3Vqd7Mq][img]https://i.postimg.cc/w3Vqd7Mq/Screenshot-701.png[/img][/url])
+![json_id1](https://i.postimg.cc/yYqkcRzZ/Screenshot-701.png)
 
-![json]([url=https://postimg.cc/7fZxPwJg][img]https://i.postimg.cc/7fZxPwJg/Screenshot-702.png[/img][/url])
+![json](https://i.postimg.cc/gkvrD0YB/Screenshot-702.png)
 
-![xml_id]([url=https://postimg.cc/4nZfMzJ2][img]https://i.postimg.cc/4nZfMzJ2/Screenshot-703.png[/img][/url])
+![xml_id](https://i.postimg.cc/Kc311NCb/Screenshot-703.png)
 
-![json_id]([url=https://postimg.cc/N98gF0xx][img]https://i.postimg.cc/N98gF0xx/Screenshot-704.png[/img][/url])
+![json_id](https://i.postimg.cc/sXq1nQQb/Screenshot-704.png)
 
