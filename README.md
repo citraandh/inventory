@@ -20,7 +20,7 @@ Kelas       : PBP D
    2. Fitur terbatas. UserCreationForm hanya enyediakan username dan password sehingga jika membutuhkan informasi tambahan seperti email dan verifikasi captcha, kita harus menambahkannya secara manual.
 
 
-## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting
     
     Autentikasi akan memverifikasi apakah user adalah dirinya sendiri (identitas) sedangkan Otorisasi mengarah ke wewenang atau akses yang dimiliki user tersebut. Keduanya penting untuk menjaga keamanan dan integritas data karena user hanya dapat mengakses yang diperlukan.
 
@@ -40,7 +40,7 @@ Kelas       : PBP D
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
     
-    **Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar**
+**Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar**
 
     1. Masuk ke direktori utama dengan membuka cmd dan mengetik cd inventory_app .
     2. Mengaktifkan virtual environment dengan mengetik 'env\Scripts\activate.bat' .
@@ -61,51 +61,48 @@ Kelas       : PBP D
         '''
     10. Tambahkan baris ''last_login': request.COOKIES['last_login']' ke dalam variabel context di fungsi show_main.
     11. Ubah fungsi logout_user menjadi
-        '''
         def logout_user(request):
             logout(request)
             response = HttpResponseRedirect(reverse('main:login'))
             response.delete_cookie('last_login')
             return response
-        '''
     12. Buka main.html dan tambahkan kode di bawah diantara tombol logout dan tabel
         ' <h5>Sesi terakhir login: {{ last_login }}</h5>'
         
-    **Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada  
-    aplikasi sebelumnya untuk setiap akun di lokal.**
+**Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada  aplikasi sebelumnya untuk setiap akun di lokal.**
     
     ![user1](https://i.postimg.cc/t4MHDY1d/Whats-App-Image-2023-09-27-at-10-46-18.jpg)
 
     ![user2](https://i.postimg.cc/WzFZFDJ9/Whats-App-Image-2023-09-27-at-10-37-17.jpg)
 
-    **Menghubungkan Item dengan User**
-    1. Buka main>models.py dan import User.
-    2. Tambahkan user = models.ForeignKey(User, on_delete=models.CASCADE) dalam model Item untuk mengasosiasikan produk dengan seorang user.
-    3. Buka main>views.py dan modifikasi fungsi create_product menjadi
-        '''
-        def create_product(request):
-            form = ProductForm(request.POST or None)
+**Menghubungkan Item dengan User**
+1. Buka main>models.py dan import User.
+2. Tambahkan user = models.ForeignKey(User, on_delete=models.CASCADE) dalam model Item untuk mengasosiasikan produk dengan seorang user.
+3. Buka main>views.py dan modifikasi fungsi create_product menjadi
+    '''
+    def create_product(request):
+        form = ProductForm(request.POST or None)
 
-            if form.is_valid() and request.method == "POST":
-                product = form.save(commit=False)
-                product.user = request.user
-                product.save()
-                return HttpResponseRedirect(reverse('main:show_main'))
-        '''
-    4. Ubah kode dalam fungsi show_main bagian context 'name' menjadi
-        '''
-            'name': request.user.username,
-        '''
-        untuk menampilkan username yang login pada page main.
+        if form.is_valid() and request.method == "POST":
+            product = form.save(commit=False)
+            product.user = request.user
+            product.save()
+            return HttpResponseRedirect(reverse('main:show_main'))
+    '''
+4. Ubah kode dalam fungsi show_main bagian context 'name' menjadi
+    '''
+        'name': request.user.username,
+    '''
+    untuk menampilkan username yang login pada page main.
 
-    5. Lakukan migrasi model dengan mengetik pada cmd
-        '''
-        python manage.py makemigrations
-        '''
-        untuk membuat file migrasi berisi perubahan model dan
-        '''
-        python manage.py migrate
-        '''
-        untuk mengaplikasikan perubahan model`
-    
-    Terakhir, git add, commit, push ke github
+5. Lakukan migrasi model dengan mengetik pada cmd
+    '''
+    python manage.py makemigrations
+    '''
+    untuk membuat file migrasi berisi perubahan model dan
+    '''
+    python manage.py migrate
+    '''
+    untuk mengaplikasikan perubahan model`
+
+Terakhir, git add, commit, push ke github
