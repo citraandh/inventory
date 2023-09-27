@@ -73,6 +73,10 @@ Kelas       : PBP D
         
     **Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada  
     aplikasi sebelumnya untuk setiap akun di lokal.**
+    
+    ![user1](https://i.postimg.cc/t4MHDY1d/Whats-App-Image-2023-09-27-at-10-46-18.jpg)
+
+    ![user2](https://i.postimg.cc/WzFZFDJ9/Whats-App-Image-2023-09-27-at-10-37-17.jpg)
 
     **Menghubungkan Item dengan User**
     1. Buka main>models.py dan import User.
