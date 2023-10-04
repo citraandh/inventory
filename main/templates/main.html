@@ -3,7 +3,7 @@
 {% block content %}
     <!-- CSS Styles -->
     <style>
-        /* Judul halaman */
+        /* Page Title */
         h1 {
             font-size: 40px;
             font-weight: bold;
@@ -12,6 +12,7 @@
             margin: 50px;
         }
 
+        /* List of Items and Last Login styles */
         h5 {
             font-size: 20px;
             font-family: Serif;
@@ -19,13 +20,12 @@
             background-color: #B3766E;
             padding: 5px;
             border: 1px solid #AA6EB3;
-            margin: 15px;
-            margin-left: 5px;
+            margin: 20px;
         }
 
-        /* Kelas untuk nama */
+        /* Class for Name */
         .name-class {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
             color: #AA6EB3;
             margin: 10px;
@@ -38,7 +38,7 @@
             background-color: #EADBEC; /* Warna latar belakang kotak */
         }        
 
-        /* Kontainer konten utama */
+        /* Content Container */
         .content-container {
             display: flex;
             flex-direction: column;
@@ -47,20 +47,20 @@
             height: 100vh;
         }
 
-        /* Margin konten */
+        /* Content Margin */
         .content {
             margin: 20px;
         }
 
-        /* Kartu inventaris */
-        .inventory-cards {
+        /* Item cards */
+        .Items-cards {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
 
         /* Gaya kartu inventaris */
-        .inventory-card {
+        .Items-card {
             background-color: #AA6EB3;
             color: white;
             font-family: Serif;
@@ -72,108 +72,85 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* Gaya untuk elemen terakhir dalam kartu inventaris */
-        .inventory-card-last {
-            background-color: #EADBEC;
-            color: #AA6EB3;
-            font-family: Serif;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 10px;
-            width: calc(50% - 20px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        /* Efek hover untuk kartu inventaris */
-        .inventory-card:hover {
+        /* Hover effect for Items */
+        .Items-card:hover {
             transform: translateY(-10px);
             box-shadow: 0px 20px 40px rgba(90, 24, 154, 0.3);
         }
 
-        .inventory-card-last:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 20px 40px rgba(90, 24, 154, 0.3);
-        }
-
-        /* Gaya judul dalam kartu inventaris */
-        .inventory-card h2 {
+        /* Item's name*/
+        .Items-card h2 {
             font-size: 20px;
             font-weight: bold;
             margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        .inventory-card-last h2 {
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Gaya teks dalam kartu inventaris */
-        .inventory-card p {
+        /* Text size */
+        .Items-card p {
             font-size: 20px;
         }
 
-        /* Gaya tombol */
+        /* Button style */
         .button {
             background-color: #AA6EB3;
             color: #fff;
             padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
-            margin: 10px;
+            margin: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Efek hover untuk tombol */
+        /* Hover effect for button */
         .button:hover {
             background-color: #8F7993;
         }
     </style>
 
-    <!-- Judul halaman -->
+    <!-- Page Title -->
     <title>Patisserie</title>
     <h1>Patisserie Page🧁</h1>
 
-    <!-- Nama dan Kelas dalam satu kotak -->
+    <!-- Name and Class in a box -->
     <div class="name-class-container">
         <p class="name-class">{{ name }}</p>
         <p class="name-class">{{ class }}</p>
     </div>
 
-    <!-- Daftar Inventaris -->
-    <h5>List of Inventories:</h5>
+    <!-- Items List -->
+    <h5>List of Items:</h5>
 
-    <!-- Daftar inventaris dengan kartu-kartu -->
-    <div class="inventory-cards">
+    <!-- Item Cards -->
+    <div class="Items-cards">
         {% for product in products %}
-            <div class="inventory-card{% if forloop.last %}-last{% endif %}">
-                <div class="inventory-card-content">
+            <div class="Items-card">
+                <div class="Items-card-content">
                     <h2>{{ product.name }}</h2>
                     <p>Price: {{ product.price }}</p>
                     <p>Amount: {{ product.amount }}</p>
                     <p>{{ product.description }}</p>
-                    <p>Date Added: {{ product.date_added }}</p>
+                    <!-- Ubah warna latar belakang tanggal penambahan -->
+                    <p style="background-color: #EADBEC;">Date Added: {{ product.date_added }}</p>
                 </div>
             </div>
         {% endfor %}
     </div>
 
-    <!-- Sesi terakhir login -->
+    <!-- Last Login -->
     <br />
     <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-    <!-- Tombol untuk menambah produk baru -->
+    <!-- Add New Product Button -->
     <a href="{% url 'main:create_product' %}">
         <button class="button">
             Add New Product
         </button>
     </a>
 
-    <!-- Tombol untuk logout -->
+    <!-- Logout Button -->
     <a href="{% url 'main:logout' %}">
         <button class="button">
             Logout

@@ -301,3 +301,36 @@ Tailwind CSS mengandalkan penggunaan kelas-kelas utilitas yang telah ditentukan 
 Di sisi lain, Bootstrap menyediakan tampilan yang lebih konsisten di seluruh proyek dan memiliki pembelajaran yang lebih cepat, terutama bagi pemula yang dapat memulai dengan komponen yang sudah siap pakai. Pilihan antara Bootstrap dan Tailwind tergantung pada kebutuhan proyek dan preferensi pengembang.
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Tugas kali ini, saya memodifikasi layout atau tampilan dari web yang telah dibuat sebelumnya: 
+Tema web yaang dibuat adalah bernuansa Ungu dengan pink dan kuning. 
+
+1. **login.html**: Halaman ini digunakan untuk login ke aplikasi. Adapun di dalamnya:
+   - Terdapat form login dengan input untuk username dan password.
+   - Terdapat tombol "Login" untuk mengirimkan data login.
+   - Terdapat juga link "Register Now" untuk mengarahkan pengguna ke halaman pendaftaran jika mereka belum memiliki akun.
+   
+2. **register.html**: Halaman ini digunakan untuk membuat akun baru jika pengguna belum memiliki akun. Page ini berisi:
+   - Form pendaftaran dengan berbagai informasi yang harus diisi oleh pengguna.
+   - Tombol "Daftar" untuk mengirimkan data pendaftaran.
+   
+3. **main.html**: Halaman utama dari aplikasi setelah login. Didalamnya:
+   - Menampilkan judul halaman "Patisserie Page" dengan hiasan emoji 🧁.
+   - Menampilkan nama dan kelas pengguna dalam satu kotak.
+   - Menampilkan daftar item (produk) dalam bentuk kartu (tidak menggunakan framework) dengan informasi seperti nama, harga, jumlah, deskripsi, dan tanggal penambahan.
+   - Menampilkan waktu last login.
+   - Terdapat tombol "Add New Product" yang mengarahkan pengguna ke halaman untuk menambahkan produk baru.
+   - Terdapat tombol "Logout" untuk keluar dari akun.
+   
+4. **create product.html**: Halaman ini digunakan untuk menambahkan produk baru ke dalam aplikasi.
+   - Menampilkan judul "New Product".
+   - Terdapat form untuk mengisi informasi produk seperti nama, harga, jumlah, deskripsi, dan lainnya.
+   - Terdapat tombol "Add Product" untuk mengirimkan data produk yang baru ditambahkan.
+
+Semua halaman menggunakan CSS untuk mengatur tampilan dan style elemen-elemen HTML sehingga tampilan keseluruhan aplikasi terlihat menarik dan konsisten.
+
+* Menambahkan `<style` CSS untuk mengatur tampilan termasuk background, font, dan lainnya.
+* Mengatur tampilan dengan tema ungu dan terstruktur rapih.
+
+BONUS
+![user1](https://i.postimg.cc/FsQGFb87/Screenshot-778.png)
+
