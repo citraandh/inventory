@@ -1,51 +1,183 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Pattiserie Page</h1>
+    <!-- CSS Styles -->
+    <style>
+        /* Judul halaman */
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #AA6EB3;
+            text-align: center;
+            margin: 50px;
+        }
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
+        h5 {
+            font-size: 20px;
+            font-family: Serif;
+            color: #fff;
+            background-color: #B3766E;
+            padding: 5px;
+            border: 1px solid #AA6EB3;
+            margin: 15px;
+            margin-left: 5px;
+        }
 
-    <h5>Class:</h5>
-    <p>{{class}}</p>
+        /* Kelas untuk nama */
+        .name-class {
+            font-size: 20px;
+            font-weight: bold;
+            color: #AA6EB3;
+            margin: 10px;
+        }
 
+        .name-class-container {
+            text-align: center; /* Pusatkan teks dalam kotak */
+            border: 1px solid #AA6EB3; /* Tambahkan garis pinggir pada kotak */
+            padding: 10px; /* Berikan jarak padding untuk membuat kotak lebih terlihat */
+            background-color: #EADBEC; /* Warna latar belakang kotak */
+        }        
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Amount</th>
-        <th>Description</th>
-        <th>Date Added</th>
-    </tr>
+        /* Kontainer konten utama */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+        /* Margin konten */
+        .content {
+            margin: 20px;
+        }
 
-    {% for product in products %}
-        <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.amount}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.date_added}}</td>
-        </tr>
-    {% endfor %}
-</table>
+        /* Kartu inventaris */
+        .inventory-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-<br />
+        /* Gaya kartu inventaris */
+        .inventory-card {
+            background-color: #AA6EB3;
+            color: white;
+            font-family: Serif;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: calc(50% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+        /* Gaya untuk elemen terakhir dalam kartu inventaris */
+        .inventory-card-last {
+            background-color: #EADBEC;
+            color: #AA6EB3;
+            font-family: Serif;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: calc(50% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-<a href="{% url 'main:create_product' %}">
-    <button>
-        Add New Product
-    </button>
-</a>
+        /* Efek hover untuk kartu inventaris */
+        .inventory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 40px rgba(90, 24, 154, 0.3);
+        }
 
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
+        .inventory-card-last:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 40px rgba(90, 24, 154, 0.3);
+        }
 
+        /* Gaya judul dalam kartu inventaris */
+        .inventory-card h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .inventory-card-last h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Gaya teks dalam kartu inventaris */
+        .inventory-card p {
+            font-size: 20px;
+        }
+
+        /* Gaya tombol */
+        .button {
+            background-color: #AA6EB3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        /* Efek hover untuk tombol */
+        .button:hover {
+            background-color: #8F7993;
+        }
+    </style>
+
+    <!-- Judul halaman -->
+    <title>Patisserie</title>
+    <h1>Patisserie Page🧁</h1>
+
+    <!-- Nama dan Kelas dalam satu kotak -->
+    <div class="name-class-container">
+        <p class="name-class">{{ name }}</p>
+        <p class="name-class">{{ class }}</p>
+    </div>
+
+    <!-- Daftar Inventaris -->
+    <h5>List of Inventories:</h5>
+
+    <!-- Daftar inventaris dengan kartu-kartu -->
+    <div class="inventory-cards">
+        {% for product in products %}
+            <div class="inventory-card{% if forloop.last %}-last{% endif %}">
+                <div class="inventory-card-content">
+                    <h2>{{ product.name }}</h2>
+                    <p>Price: {{ product.price }}</p>
+                    <p>Amount: {{ product.amount }}</p>
+                    <p>{{ product.description }}</p>
+                    <p>Date Added: {{ product.date_added }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Sesi terakhir login -->
+    <br />
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+    <!-- Tombol untuk menambah produk baru -->
+    <a href="{% url 'main:create_product' %}">
+        <button class="button">
+            Add New Product
+        </button>
+    </a>
+
+    <!-- Tombol untuk logout -->
+    <a href="{% url 'main:logout' %}">
+        <button class="button">
+            Logout
+        </button>
+    </a>
+</div>
 {% endblock content %}

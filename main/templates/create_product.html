@@ -1,7 +1,79 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
-<h1>Add New Product</h1>
+<style>
+    body {
+        background-color: #C3B3E2; /* Light purple background color */
+        font-family: Georgia, sans-serif;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #5E35B1 ; /* Dark purple header text color */
+        text-align: center;
+        font-family: Times New Roman;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff; /* White background for the form */
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        color: #5E35B1; /* Dark purple label text color */
+    }
+
+    .form-control {
+        width: 100%; /* Set the width to 100% to ensure it fits within the box */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        height: 40px;
+    }
+
+    textarea[name="description"] {
+        width: 100%; /* Set the width to 100% */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        height: 100px; /* Set the desired height */
+    }
+
+    input[type="submit"] {
+        background-color: #7b68ee; /* Dark purple button color */
+        color: #fff; /* White button text color */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #9932cc; /* Darker purple on hover */
+    }
+</style>
+
+<title>Add New Product</title>
+<h1>New Product</h1>
 
 <form method="POST">
     {% csrf_token %}
@@ -15,5 +87,4 @@
         </tr>
     </table>
 </form>
-
 {% endblock %}

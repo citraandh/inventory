@@ -5,41 +5,104 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    /* Add the following CSS rules inline */
+    body {
+        background-color: #f0e5e5; /* Light purple background color */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-<div class = "login">
+    .login-container {
+        background-color: #7b68ee; /* Dark purple container background color */
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
 
-    <h1>Login</h1>
+    .login-title {
+        color: #fff; /* White text color */
+    }
 
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        color: #fff; /* White text color for labels */
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .btn.login-btn {
+        background-color: #8a2be2; /* Blue-Violet button color */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn.login-btn:hover {
+        background-color: #9932cc;
+    }
+
+    .messages {
+        list-style: none;
+        padding: 0;
+        color: #D2BA18; /* Red text color for messages */
+    }
+
+    .register-link {
+        color: #fff; 
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .register-link a {
+        color: #D2BA18; /* Gold link color on hover */
+        text-decoration: none;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+<div class="login-container">
+    <h1 class="login-title">Login</h1>
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Username" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+        </div>
+        <div class="form-group">
+            <input class="btn login-btn" type="submit" value="Login">
+        </div>
     </form>
-
     {% if messages %}
-        <ul>
+        <ul class="messages">
             {% for message in messages %}
                 <li>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
+    {% endif %}
+    <p class="register-link">Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
 </div>
-
 {% endblock content %}
