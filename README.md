@@ -140,7 +140,7 @@ Karena JSON menyimpan data dengan pasangan key-value (dictionary) dan
 ![json_id](https://i.postimg.cc/sXq1nQQb/Screenshot-704.png)'
 
 # Pertanyaan Tugas 4
-=================================================================\
+=================================================================
 ## Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
    
    UserCreationForm adalah form bawaan Django untuk membuat user baru yang dapat mengakses web kita. Memiliki 3 fields yaitu username, password, dan password (confirmation).
@@ -334,3 +334,44 @@ Semua halaman menggunakan CSS untuk mengatur tampilan dan style elemen-elemen HT
 BONUS
 ![user1](https://i.postimg.cc/FsQGFb87/Screenshot-778.png)
 
+# Pertanyaan Tugas 5
+
+## Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Sinkronus artinya eksekusi setiap operasi bergantung pada status selesainya operasi sebelum. Jika operasi sebelumnya belum selesai, maka akan dilakukan blocking sehingga tidak bisa meneruskannya. User harus menunggu suatu data selesai diupload baru melakukan action lainnya.
+
+Asinkronus artinya eksekusi satu operasi tidak bergantung pada aksi lainnya. User bisa berinteraksi dengan website, tanpa harus menunggu satu aksi selesai (misalnya upload data).
+
+Adapun perbedannya antara lain:
+    - Asinkronus adalah multi-thread, yang berarti operasi atau program dapat berjalan secara paralel.
+    - Sinkronus adalah single-thread, sehingga hanya satu operasi atau program yang berjalan pada satu waktu.
+    - Asinkronus adalah non-blocking, yang berarti ia akan mengirimkan banyak permintaan ke server.
+    - Sinkronus blocking, ia hanya akan mengirimkan satu permintaan ke server pada satu waktu dan menunggu sampai permintaan tersebut dijawab oleh server.
+    - Sinkronus lebih lambat, metodis, dan lebih mudah diikuti.
+
+## Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Paradigma event-driven programming artinya pemrograman yang berfokus pada pengelolaan event atau peristiwa dalam aplikasi. Dalam JavaScript dan AJAX, sering digunakan karena aplikasi web bergantung pada respon terhadap event. Contohnya adalah klik mouse, tekan tombol keyboard, atau bisa juga meminta data dari server melalui AJAX. Hal penting dari paradigma ini adalah:
+- Pentingnya event seperti klik mouse, tombol keyboard, atau bisa juga mengirimkan pesan.
+- Event Handler, respon ketika suatu event terjadi. Biasanya berupa fungsi.
+- Non blocking, artinya web tidak perlu menunggu satu aksi selesai sebelum melanjutkan eksekusi aksi berikutnya. Web akan tetap responsif dan dinamis.'
+
+## Jelaskan penerapan asynchronous programming pada AJAX.
+Asynchronous programming dalam konteks AJAX mencerminkan penggunaan teknik yang memungkinkan kode dieksekusi secara asinkron, tanpa harus menghentikan eksekusi utama dari program. Praktik ini memungkinkan halaman web untuk tetap responsif dan berinteraksi dengan pengguna tanpa menunggu tugas yang memerlukan waktu, seperti permintaan ke server, untuk selesai. Penerapan asynchronous programming dalam AJAX melibatkan penggunaan fitur-fitur seperti async dan await. Kita dapat mendefinisikan fungsi sebagai async dengan menambahkan kata kunci `async` sebelum kata kunci fungsi, yang mengindikasikan bahwa fungsi tersebut akan beroperasi secara asinkronus dan dapat menggunakan `await` untuk menunggu hasil dari operasi asinkronus lainnya. Dengan kedua fungsi tersebut, kita dapat mengendalikan alur eksekusi dengan lebih efisien.
+
+## Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Fetch API:
+- Lebih modern.
+- Kita tidak perlu menambahkan library tambahan sehingga kode lebih ringan dan bersih.
+- Fleksibel, memiliki support untuk berbagai jenis HTTP request.
+- Fetch API menggunakan Promises, yang membuatnya lebih mudah untuk mengelola permintaan asinkron dan menghindari callback hell.
+jQuery:
+- Menyediakan abstraksi tingkat tinggi untuk berbagai tugas, termasuk AJAX.
+- Dukungan Cross-Browser.
+- Dokumentasi banyak sehingga mudah dipelajari.
+
+Fetch API adalah pilihan yang lebih modern dan disarankan untuk aplikasi web modern, memberikan kontrol lebih besar dan kode yang lebih bersih. jQuery, sementara lebih mudah diimplementasikan dan cocok untuk pemula, mungkin menambah overhead jika digunakan hanya untuk fungsi AJAX. Pemilihan tergantung pada kebutuhan proyek dan preferensi. Dalam banyak kasus, Fetch API dengan JavaScript lebih efisien.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- Buat fungsi get product json di views.py
+- Buat fungsi add_product_ajax 
+- Routing
+- Menampilkan button Add Product by AJAX
