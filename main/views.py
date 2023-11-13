@@ -86,12 +86,6 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
-def logout_user(request):
-    logout(request)
-    response = HttpResponseRedirect(reverse('main:login'))
-    response.delete_cookie('last_login')
-    return response
-
 def get_product_json(request):
     product_item = Item.objects.all()
     return HttpResponse(serializers.serialize('json', product_item))
@@ -111,3 +105,9 @@ def add_product_ajax(request):
         return HttpResponse(b"CREATED", status=201)
     else:
         return HttpResponseNotFound()
+    
+def logout_user(request):
+    logout(request)
+    response = HttpResponseRedirect(reverse('main:login'))
+    response.delete_cookie('last_login')
+    return response

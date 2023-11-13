@@ -61,7 +61,7 @@
     .messages {
         list-style: none;
         padding: 0;
-        color: #D2BA18; /* Red text color for messages */
+        color: #D2BA18; /* yellow color for messages */
     }
 
     .register-link {
@@ -71,7 +71,7 @@
     }
 
     .register-link a {
-        color: #D2BA18; /* Gold link color on hover */
+        color: #D2BA18; /* Gold link color */
         text-decoration: none;
     }
 
@@ -79,6 +79,7 @@
         text-decoration: underline;
     }
 </style>
+
 <div class="login-container">
     <h1 class="login-title">Login</h1>
     <form method="POST" action="">
@@ -102,6 +103,6 @@
             {% endfor %}
         </ul>
     {% endif %}
-    <p class="register-link">Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
+    <p class="register-link">Already has account? Login <a href="{% url 'main:register' %}">Register Now</a></p>
 </div>
 {% endblock content %}

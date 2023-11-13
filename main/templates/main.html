@@ -14,7 +14,7 @@
             margin: 50px;
         }
 
-        /* List of Items and Last Login styles */
+        /* List of Items */
         h5 {
             font-size: 20px;
             font-family: Serif;
@@ -25,7 +25,7 @@
             margin: 20px;
         }
 
-        /* Class for Name */
+        /* Class for username and pbp class */
         .name-class {
             font-size: 24px;
             font-weight: bold;
@@ -35,8 +35,8 @@
 
         .name-class-container {
             text-align: center; /* Pusatkan teks dalam kotak */
-            border: 1px solid #AA6EB3; /* Tambahkan garis pinggir pada kotak */
-            padding: 10px; /* Berikan jarak padding untuk membuat kotak lebih terlihat */
+            border: 1px solid #AA6EB3; /* Tambahkan border kotak */
+            padding: 10px; /* Berikan padding */
             background-color: #EADBEC; /* Warna latar belakang kotak */
         }        
 
@@ -61,7 +61,7 @@
             justify-content: space-between;
         }
 
-        /* Gaya kartu inventaris */
+        /* Style item cards */
         .Items-card {
             background-color: #AA6EB3;
             color: white;
@@ -160,9 +160,11 @@
     </a>
 
      <!-- Add Product by AJAX Button -->
-    <button type="button" class="btn btn-primary" id="button_add_ajax" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="add_product_ajax()">
-        Add Product by AJAX
-    </button>
+     <a href="{% url 'main:add_product_ajax' %}">
+        <button type="button" class="button" id="button_add_ajax" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="add_product_ajax()">
+            Add Product by AJAX
+        </button>
+    </a>
 
 <script>
     // Define functions for fetching and updating product data

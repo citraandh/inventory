@@ -334,7 +334,7 @@ Semua halaman menggunakan CSS untuk mengatur tampilan dan style elemen-elemen HT
 BONUS
 ![user1](https://i.postimg.cc/FsQGFb87/Screenshot-778.png)
 
-# Pertanyaan Tugas 5
+# Pertanyaan Tugas 6
 
 ## Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 Sinkronus artinya eksekusi setiap operasi bergantung pada status selesainya operasi sebelum. Jika operasi sebelumnya belum selesai, maka akan dilakukan blocking sehingga tidak bisa meneruskannya. User harus menunggu suatu data selesai diupload baru melakukan action lainnya.
