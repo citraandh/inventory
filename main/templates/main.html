@@ -160,11 +160,10 @@
     </a>
 
      <!-- Add Product by AJAX Button -->
-     <a href="{% url 'main:add_product_ajax' %}">
-        <button type="button" class="button" id="button_add_ajax" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="add_product_ajax()">
+
+        <button type="button" class="button" id="button_add_ajax" data-bs-toggle="modal" data-bs-target="exampleModal" onclick="add_product_ajax()">
             Add Product by AJAX
         </button>
-    </a>
 
 <script>
     // Define functions for fetching and updating product data
@@ -240,4 +239,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}
